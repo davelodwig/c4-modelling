@@ -63,6 +63,21 @@ workspace "C4 Modelling Examples" "Sample code used for the software engineering
         	autolayout lr
     	}
 
+		systemContext exampleSystem {
+			include *
+			autolayout lr
+		}
+
+		container exampleSystem {
+			include *
+			autolayout lr
+		}
+
+		deployment * test {
+			include *
+			autolayout lr
+		}
+
 		styles {
 		
 			element "frontend" {
