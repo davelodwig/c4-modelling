@@ -49,9 +49,22 @@ workspace "C4 Modelling Examples" "Sample code used for the software engineering
 		# Deployments
 		test = deploymentEnvironment "TestEnvironment" {
 
-		}
+			dev_vm = deploymentNode "Development VM" {
 
-	
+				node1 = deploymentNode "Podman" {
+					node1_proxy = containerInstance proxy
+					node1_ui = containerInstance ui
+					node1_api = containerInstance api
+				}
+
+				db1_node = deploymentNode "Database Server" {
+					db1 = containerInstance database {
+						tags "database"
+					}
+				}
+			}
+		}	
+		
 	}
 
 	views {
