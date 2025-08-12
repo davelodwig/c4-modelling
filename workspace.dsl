@@ -36,11 +36,22 @@ workspace "C4 Modelling Examples" "Sample code used for the software engineering
 
 		}
 
-		user -> exampleSystem.proxy "Makes requests against the system" "HTTP"
-		admin -> exampleSystem.proxy "Manages system features" "HTTP"
+		user -> proxy "Makes requests against the system" "HTTP"
+		admin -> proxy "Manages system features" "HTTP"
 
 		# External Systems
-		
+		email = softwareSystem "Email Server" {
+			tags "External"
+		}
+
+		api -> email "Sends email to users"
+
+		# Deployments
+		test = deploymentEnvironment "Test Environment" {
+
+
+
+		}
 
 	
 	}
