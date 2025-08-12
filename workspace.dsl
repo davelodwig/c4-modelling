@@ -47,9 +47,7 @@ workspace "C4 Modelling Examples" "Sample code used for the software engineering
 		api -> email "Sends email to users"
 
 		# Deployments
-		test = deploymentEnvironment "Test Environment" {
-
-
+		test = deploymentEnvironment "TestEnvironment" {
 
 		}
 
